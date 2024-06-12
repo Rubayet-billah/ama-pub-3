@@ -9,12 +9,13 @@ module.exports = {
     themes: [
       {
         customTheme: {
-          primary: "#182628",
-          secondary: "#65CCB8",
-          accent: "#F2F2F2",
-          neutral: "#3B945B",
+          primary: "#021526",
+          secondary: "#042959",
+          accent: "#F2F2F2", // or #A2CDF2
+          neutral: "#043F8C",
           info: "#0A54FF",
           success: "#474747",
+          tertiary: "#389BF2",
         },
       },
     ],
@@ -37,13 +38,13 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: "#182628",
-        secondary: "#65CCB8",
-        accent: "#F2F2F2",
-        neutral: "#3B945B",
+        primary: "#021526",
+        secondary: "#042959",
+        accent: "#F2F2F2", // or #A2CDF2
+        neutral: "#043F8C",
         info: "#0A54FF",
         success: "#474747",
-        tertiary: "#57ba98",
+        tertiary: "#389BF2",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

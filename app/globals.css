@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: #182628;
-  --color-secondary: #65ccb8;
-  --color-accent: #f2f2f2;
-  --color-neutral: #3b945b;
+  --color-primary: #021526;
+  --color-secondary: #042959;
+  --color-accent: #f2f2f2; /* or #A2CDF2 */
+  --color-neutral: #043f8c;
   --color-info: #0a54ff;
   --color-success: #474747;
-  --color-tertiary: #57ba98;
+  --color-tertiary: #389bf2;
 }
 
 @layer components {

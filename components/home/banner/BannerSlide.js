@@ -19,7 +19,7 @@ import { slidesData } from "@/constants/constants";
 const BannerSlide = () => {
   return (
     <div>
-      <Swiper
+      {/* <Swiper
         navigation={true}
         autoplay={{
           delay: 4000,
@@ -58,7 +58,8 @@ const BannerSlide = () => {
             </MRFImage>
           </SwiperSlide>
         ))}
-      </Swiper>
+      </Swiper> */}
+      <section></section>
     </div>
   );
 };
