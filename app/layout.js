@@ -22,7 +22,13 @@ export default async function RootLayout({ children }) {
   const parentCategories = await fetchParentCategories();
   return (
     <html data-theme="customTheme" lang="en">
-      <body className={radioCanada.className}>
+      <body
+        className={radioCanada.className}
+        style={{
+          backgroundColor: "var(--color-bg-base)",
+          color: "var(--color-text-base)",
+        }}
+      >
         <TopNavbar />
         <MainNavbar parentCategories={parentCategories} />
         <main>{children}</main>

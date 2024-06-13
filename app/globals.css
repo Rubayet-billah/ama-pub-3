@@ -10,6 +10,8 @@
   --color-info: #0a54ff;
   --color-success: #474747;
   --color-tertiary: #389bf2;
+  --color-bg-base: #ffffff;
+  --color-text-base: #000000;
 }
 
 @layer components {

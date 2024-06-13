@@ -45,6 +45,8 @@ module.exports = {
         info: "#0A54FF",
         success: "#474747",
         tertiary: "#389BF2",
+        "bg-base": "#FFFFFF",
+        "text-base": "#000000",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
