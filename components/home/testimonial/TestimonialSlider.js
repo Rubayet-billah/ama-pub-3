@@ -1,22 +1,43 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, FreeMode, Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/free-mode";
-import "./TesimonialSlider.css";
+import { ArrowLeft, ArrowRight } from "react-feather";
 import TestimonialCard from "./TestimonialCard";
 
 const TestimonialSlider = ({ testimonials }) => {
-  const [screenWidth, setScreenWidth] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [slidesPerView, setSlidesPerView] = useState(1);
+
+  const goToPrevious = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide
+      ? testimonials.length - slidesPerView
+      : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const goToNext = () => {
+    const isLastSlide = currentIndex === testimonials.length - slidesPerView;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      goToNext();
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [currentIndex]);
 
   useEffect(() => {
     const handleResize = () => {
-      setScreenWidth(window.innerWidth);
+      if (window.innerWidth >= 768) {
+        setSlidesPerView(2);
+      } else {
+        setSlidesPerView(1);
+      }
     };
 
-    // Set initial screen width on client-side
-    setScreenWidth(window.innerWidth);
+    handleResize(); // Set initial screen width on client-side
 
     window.addEventListener("resize", handleResize);
 
@@ -26,39 +47,44 @@ const TestimonialSlider = ({ testimonials }) => {
     };
   }, []);
 
-  if (screenWidth === null) {
-    return null; // Or a loading indicator
-  }
-
-  let slidesPerView = 1;
-
-  // Set size conditionally based on screen width
-  if (screenWidth >= 768) {
-    slidesPerView = 2;
-  }
-
   return (
-    <div className="py-5 lg:pb-24">
-      <Swiper
-        navigation={true}
-        slidesPerView={slidesPerView}
-        spaceBetween={30}
-        freeMode={true}
-        pagination={{
-          clickable: true,
-        }}
-        autoplay={{
-          delay: 4000,
-          disableOnInteraction: false,
-        }}
-        modules={[Autoplay, FreeMode, Navigation]}
-      >
-        {testimonials?.map((testimonial) => (
-          <SwiperSlide key={testimonial.id}>
-            <TestimonialCard testimonial={testimonial} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+    <div className="relative py-5 lg:mb-24">
+      <section className="flex w-full max-w-full overflow-hidden">
+        <div
+          className="flex transition-transform duration-1000"
+          style={{
+            transform: `translateX(-${currentIndex * (100 / slidesPerView)}%)`,
+            width: `${100 * (testimonials.length / slidesPerView)}%`,
+          }}
+        >
+          {testimonials.map((testimonial) => (
+            <div
+              key={testimonial.id}
+              className="flex-shrink-0 px-2"
+              style={{
+                width: `${100 / slidesPerView}%`,
+                boxSizing: "border-box",
+              }}
+            >
+              <TestimonialCard testimonial={testimonial} />
+            </div>
+          ))}
+        </div>
+        <div className="absolute flex items-center justify-between w-full h-full px-5 xl:px-10">
+          <button
+            className="p-2 text-white bg-opacity-50 rounded-full bg-primary hover:bg-opacity-75"
+            onClick={goToPrevious}
+          >
+            <ArrowLeft />
+          </button>
+          <button
+            className="p-2 text-white bg-opacity-50 rounded-full bg-primary hover:bg-opacity-75"
+            onClick={goToNext}
+          >
+            <ArrowRight />
+          </button>
+        </div>
+      </section>
     </div>
   );
 };
