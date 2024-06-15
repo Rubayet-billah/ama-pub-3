@@ -13,34 +13,17 @@ const IndustryCard = ({ industry }) => {
   };
 
   return (
-    <Link
-      href={`/industries/${link}`}
-      // className="flex items-center gap-2 px-2 py-5 duration-300 hover:bg-white min-h-60 group"
-      className="duration-300 group"
-    >
-      {/* <div> */}
-      {/* <div
-          className={`w-0 mx-auto border-r-8 border-secondary group-hover:visible h-0 group-hover:h-8 duration-300`}
-        ></div> */}
-      <div className="relative z-10 p-4 mx-auto mb-2 rounded-full w-fit bg-info">
+    <Link href={`/industries/${link}`} className="duration-300">
+      <div className="relative z-10 p-4 mx-auto mb-2 duration-300 rounded-full w-fit bg-tertiary hover:bg-primary group">
         {icon && (
-          <LucidIcon name={icon} classNames="mx-auto text-primary" size={30} />
+          <LucidIcon
+            name={icon}
+            classNames="mx-auto text-primary group-hover:text-tertiary duration-300"
+            size={30}
+          />
         )}
       </div>
-      {/* <div
-          className={`w-0 h-0 mx-auto border-r-8 border-secondary group-hover:visible group-hover:h-8 duration-300`}
-        ></div> */}
-      {/* </div> */}
       <h1 className="font-bold text-center text-primary">{label}</h1>
-      {/* <div className="flex flex-col gap-2 px-4">
-        <p className="text-sm text-neutral">
-          {truncateText(
-            summary ||
-              "Dummy text: Showing because summary is empty now. It will replace when summary comes from backend",
-            130
-          )}
-        </p>
-      </div> */}
     </Link>
   );
 };
