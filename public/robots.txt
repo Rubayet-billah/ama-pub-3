@@ -5,4 +5,3 @@ Disallow: /faq
 Disallow: /terms-and-condition
 Disallow: /privacy-policy
 
-Sitemap: https://www.archivemarketresearch.com/sitemap.xml

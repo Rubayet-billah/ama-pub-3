@@ -31,6 +31,9 @@ const Industries = ({ industries }) => {
           {industries?.map((industry) => {
             return <IndustryCard key={industry.id} industry={industry} />;
           })}
+          {industries?.map((industry) => {
+            return <IndustryCard key={industry.id} industry={industry} />;
+          })}
         </section>
       </CustomContainer>
     </div>
