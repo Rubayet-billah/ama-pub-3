@@ -3,7 +3,7 @@ import React from "react";
 const SectionTitle = ({ children, classNames }) => {
   return (
     <div
-      className={`flex flex-col items-center py-5 md:py-12 lg:pb-16 ${
+      className={`flex flex-col items-center py-5 md:py-12 lg:pb-16 relative z-1 ${
         " " + classNames
       }`}
     >

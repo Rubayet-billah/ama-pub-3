@@ -4,10 +4,10 @@ import CountUp from "react-countup";
 
 const Stats = () => {
   const statsData = [
-    { value: 5150, label: "Reports" },
-    { value: 2350, label: "Clients" },
-    { value: 1050, label: "Managed Reports" },
-    { value: 100, label: "Satisfied customers" },
+    { value: 5000, unit: "+", label: "Industries Covered" },
+    { value: 260, unit: "k+", label: "Hours of details analyst" },
+    { value: 101, unit: "k+", label: "Subscribe Community" },
+    // { value: 100, label: "Satisfied customers" },
   ];
 
   const [isCounting, setIsCounting] = useState(false);
@@ -42,18 +42,21 @@ const Stats = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-2 mt-12 font-bold text-white lg:grid-cols-4 lg:mt-24">
+    <div className="grid grid-cols-2 font-bold text-secondary drop-shadow-xl lg:grid-cols-3 place-items-center">
       {statsData.map((stat, idx) => (
-        <div key={idx} className="px-2 py-2 lg:px-6 lg:py-3">
+        <div key={idx} className="px-2 py-2 lg:px-6 lg:py-3 w-fit">
           <h1 ref={countRef} className="mrf-heading">
             {isCounting ? (
               <CountUp end={+stat.value}>{stat.value}</CountUp>
             ) : (
               stat.value
             )}
-            {idx == 3 ? <span>%</span> : <span>+</span>}
+            <span>{stat.unit}</span>
+            {/* {idx == 3 ? <span>%</span> : <span>+</span>} */}
           </h1>
-          <h2 className="sm:text-lg md:text-xl md:mt-2">{stat.label}</h2>
+          <h2 className="capitalize sm:text-lg md:text-xl md:mt-2">
+            {stat.label}
+          </h2>
         </div>
       ))}
     </div>

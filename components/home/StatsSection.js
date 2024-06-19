@@ -4,28 +4,34 @@ import Stats from "./stat/Stats";
 import { CheckCircle } from "react-feather";
 import CustomContainer from "../ui/CustomContainer";
 import MRFImage from "../ui/Image";
+import SectionTitle from "../ui/SectionTitle";
+import SinewaveSvg from "../ui/svg/SinewaveSvg";
 
 const StatsSection = () => {
   return (
-    <MRFImage src={bgImage} alt="Stats section BG image" bgImage>
-      <div className="py-12 bg-opacity-50 bg-primary min-h-48 md:py-24 lg:py-36">
+    <div className="relative">
+      <SinewaveSvg />
+      <SectionTitle>Global coverage written by analysts</SectionTitle>
+      <div className="py-12">
         <CustomContainer>
-          <div className="flex gap-2 lg:gap-6">
-            <div>
-              <CheckCircle className="text-secondary" size={70} />
-            </div>
-            <h1 className="text-white mrf-heading">
-              <span className="text-secondary">Doing the right thing,</span>{" "}
-              <br />
-              at the right time.
-            </h1>
-          </div>
-          <div className="lg:ml-16">
+          <div>
             <Stats />
           </div>
         </CustomContainer>
       </div>
-    </MRFImage>
+      <section className="relative p-5 text-center lg:p-8 z-1 bg-secondary bg-opacity-10">
+        <CustomContainer>
+          <h2 className="mb-5 font-bold mrf-h4">
+            Trusted by 7,000+ companies around the world
+          </h2>
+          <p className="mrf-small">
+            Independent, accurate and written by experienced analysts. Our
+            industry analysis, company database and economic insights support
+            businesses of all sizes, across all markets.
+          </p>
+        </CustomContainer>
+      </section>
+    </div>
   );
 };
 
