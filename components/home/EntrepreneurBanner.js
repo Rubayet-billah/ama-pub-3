@@ -1,18 +1,31 @@
 import React from "react";
 import image1 from "@/assets/banner/image1.png";
 import MRFImage from "../ui/Image";
+import CustomContainer from "../ui/CustomContainer";
+import Button from "../ui/Button";
+import { ArrowRight } from "react-feather";
 
 const EntrepreneurBanner = () => {
   return (
-    <MRFImage src={image1} alt="Entrepreneurs BG image" bgImage>
-      <div className="px-5 py-12 text-center text-white bg-opacity-50 bg-primary min-h-36 md:p-24 lg:p-36 mrf-secondary-heading">
-        <h2>
-          To help entrepreneurs get their act together <br />{" "}
-          <span className="text-secondary">before they talk to investors.</span>
-        </h2>
-        <hr className="w-16 mx-auto my-6 border-4 rounded-lg border-secondary" />
-      </div>
-    </MRFImage>
+    <div className="py-5 lg:py-12">
+      <CustomContainer>
+        <div className="relative p-5 space-y-5 overflow-hidden text-white bg-primary rounded-3xl lg:p-10 lg:space-y-8">
+          <h1 className="mrf-secondary-heading">
+            Need a closer look? <br />
+            Download a sample report?
+          </h1>
+
+          <div>
+            <Button classNames="rounded-full" type="tertiary">
+              Download Sample <ArrowRight />
+            </Button>
+          </div>
+          <div className="absolute bottom-0 right-0 hidden w-96 lg:block">
+            <MRFImage src={image1} alt="image1" />
+          </div>
+        </div>
+      </CustomContainer>
+    </div>
   );
 };
 

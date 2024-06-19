@@ -29,10 +29,10 @@ export default async function Home() {
       <Service />
       <Industries industries={industryCardDataHome} />
       <Newses recentReports={recentReports} />
+      <EntrepreneurBanner />
       <StatsSection />
       <Testimonials testimonials={testimonialsHome} />
       <Sponsors sponsors={sponsorsHome} />
-      <EntrepreneurBanner />
       <Footer />
     </div>
   );
