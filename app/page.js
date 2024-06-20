@@ -26,7 +26,7 @@ export default async function Home() {
   return (
     <div>
       <Banner />
-      <Service />
+      {/* <Service /> */}
       <Industries industries={industryCardDataHome} />
       <Newses recentReports={recentReports} />
       <EntrepreneurBanner />

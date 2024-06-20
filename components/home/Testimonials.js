@@ -8,7 +8,7 @@ import TestimonialSlider from "./testimonial/TestimonialSlider";
 const Testimonials = ({ testimonials }) => {
   return (
     <div id="testimonial">
-      <SectionTitle>Testimonials</SectionTitle>
+      {/* <SectionTitle>Testimonials</SectionTitle> */}
       <TestimonialSlider testimonials={testimonials} />
     </div>
   );

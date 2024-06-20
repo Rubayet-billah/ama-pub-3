@@ -19,7 +19,7 @@ const StatsSection = () => {
           </div>
         </CustomContainer>
       </div>
-      <section className="relative p-5 text-center lg:p-8 z-1 bg-secondary bg-opacity-10">
+      <section className="relative p-5 pb-12 text-center bg-opacity-25 lg:p-8 lg:pb-20 z-1 bg-accent">
         <CustomContainer>
           <h2 className="mb-5 font-bold mrf-h4">
             Trusted by 7,000+ companies around the world

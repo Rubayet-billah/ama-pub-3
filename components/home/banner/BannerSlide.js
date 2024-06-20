@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import CustomContainer from "@/components/ui/CustomContainer";
 import MRFImage from "@/components/ui/Image";
 import { slidesData } from "@/constants/constants";
@@ -7,6 +7,11 @@ import { ArrowLeft, ArrowRight } from "react-feather";
 
 const BannerSlide = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startPosition, setStartPosition] = useState(0);
+  const [currentTranslate, setCurrentTranslate] = useState(0);
+  const [prevTranslate, setPrevTranslate] = useState(0);
+  const sliderRef = useRef(null);
 
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0;
@@ -21,20 +26,75 @@ const BannerSlide = () => {
   };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      goToNext();
-    }, 4000);
-    return () => clearInterval(interval);
+    if (!isDragging) {
+      const interval = setInterval(() => {
+        goToNext();
+      }, 4000);
+      return () => clearInterval(interval);
+    }
+  }, [currentIndex, isDragging]);
+
+  useEffect(() => {
+    setCurrentTranslate(-currentIndex * 100);
+    setPrevTranslate(-currentIndex * 100);
   }, [currentIndex]);
+
+  const touchStart = (index) => (event) => {
+    setIsDragging(true);
+    setStartPosition(getPositionX(event));
+    sliderRef.current.style.transition = "none";
+  };
+
+  const touchMove = (event) => {
+    if (!isDragging) return;
+    const currentPosition = getPositionX(event);
+    const movement = (currentPosition - startPosition) * 0.15;
+    setCurrentTranslate(prevTranslate + movement);
+  };
+
+  const touchEnd = () => {
+    setIsDragging(false);
+    const movedBy = currentTranslate - prevTranslate;
+
+    if (movedBy < -50 && currentIndex < slidesData.length - 1) {
+      setCurrentIndex((prev) => prev + 1);
+    }
+
+    if (movedBy > 50 && currentIndex > 0) {
+      setCurrentIndex((prev) => prev - 1);
+    }
+
+    sliderRef.current.style.transition = "transform 1s ease-out";
+    setCurrentTranslate(-currentIndex * 100);
+    setPrevTranslate(-currentIndex * 100);
+  };
+
+  const getPositionX = (event) => {
+    return event.type.includes("mouse")
+      ? event.pageX
+      : event.touches[0].clientX;
+  };
+
   return (
     <div>
-      <section className="relative flex w-full max-w-full overflow-hidden ">
+      <section
+        className="relative flex w-full max-w-full overflow-hidden"
+        ref={sliderRef}
+        onMouseDown={touchStart(currentIndex)}
+        onMouseMove={touchMove}
+        onMouseUp={touchEnd}
+        onMouseLeave={() => isDragging && touchEnd()}
+        onTouchStart={touchStart(currentIndex)}
+        onTouchMove={touchMove}
+        onTouchEnd={touchEnd}
+      >
         {slidesData.map((slide, index) => (
           <div
             key={slide.id}
-            className="flex-shrink-0 w-full h-full transition-transform duration-1000"
+            className="flex-shrink-0 w-full h-full"
             style={{
-              transform: `translateX(-${currentIndex * 100}%)`,
+              transform: `translateX(${currentTranslate}%)`,
+              transition: isDragging ? "none" : "transform 1s ease-out",
             }}
           >
             <CustomContainer>

@@ -10,7 +10,7 @@ const SinewaveSvg = ({
 
   return (
     <div
-      className={`absolute h-full items-center lg:w-[35vw] xl:w-[30vw] -top-12 lg:top-[-10%] xl:top-[-15%] ${
+      className={`absolute h-full items-center lg:w-[35vw] xl:w-[30vw] -top-12 lg:top-[-10%] xl:top-[-15%]  ${
         flip ? "right-0" : ""
       }`}
       style={{ zIndex, bottom, ...transformStyle }}
@@ -22,6 +22,7 @@ const SinewaveSvg = ({
           display: "block",
           margin: "0",
           width: "100%",
+          opacity: "13%",
         }}
       >
         <path
