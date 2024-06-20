@@ -78,7 +78,7 @@ const TestimonialSlider = ({ testimonials }) => {
   };
 
   return (
-    <div className="relative max-w-[90%] mx-auto -translate-y-8 bg-white xl:max-w-7xl lg:-translate-y-16 lg:mb-24 rounded-3xl">
+    <div className="relative max-w-[90%] mx-auto -translate-y-8 bg-white xl:max-w-7xl lg:-translate-y-16 rounded-3xl">
       <section
         className="flex w-full overflow-hidden "
         ref={sliderRef}

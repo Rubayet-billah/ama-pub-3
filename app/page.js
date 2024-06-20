@@ -7,6 +7,7 @@ import Service from "@/components/home/Service";
 import Sponsors from "@/components/home/Sponsors";
 import StatsSection from "@/components/home/StatsSection";
 import Testimonials from "@/components/home/Testimonials";
+import EmailNotificationBanner from "@/components/home/emailBanner/EmailNotificationBanner";
 import {
   fetchIndustriesHome,
   fetchRecentReports,
@@ -33,6 +34,7 @@ export default async function Home() {
       <StatsSection />
       <Testimonials testimonials={testimonialsHome} />
       <Sponsors sponsors={sponsorsHome} />
+      <EmailNotificationBanner />
       <Footer />
     </div>
   );
