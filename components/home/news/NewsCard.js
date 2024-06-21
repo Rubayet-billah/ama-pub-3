@@ -9,7 +9,7 @@ import Button from "@/components/ui/Button";
 
 const NewsCard = ({ report }) => {
   return (
-    <div className="flex flex-col mx-auto bg-white border rounded-lg shadow-lg max-w-96 ">
+    <div className="flex flex-col h-full mx-auto bg-white border rounded-lg shadow-lg max-w-96">
       <div className="relative">
         <Image
           src={image1}

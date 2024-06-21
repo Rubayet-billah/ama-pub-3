@@ -57,7 +57,7 @@ const SponsorSlider = ({ sponsors = companyLogos }) => {
 
   const goToNext = () => {
     const isLastSlide = currentIndex >= sponsors.length - slidesPerView;
-    const newIndex = isLastSlide ? 0 : currentIndex + slidesPerView;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
   };
 
@@ -71,8 +71,8 @@ const SponsorSlider = ({ sponsors = companyLogos }) => {
   }, [currentIndex, isDragging]);
 
   useEffect(() => {
-    setCurrentTranslate(-currentIndex * (100 / slidesPerView));
-    setPrevTranslate(-currentIndex * (100 / slidesPerView));
+    setCurrentTranslate(-currentIndex * (100 / 1));
+    setPrevTranslate(-currentIndex * (100 / 1));
   }, [currentIndex, slidesPerView]);
 
   const touchStart = (index) => (event) => {
@@ -95,7 +95,9 @@ const SponsorSlider = ({ sponsors = companyLogos }) => {
     if (movedBy < -50 && currentIndex < sponsors.length - slidesPerView) {
       setCurrentIndex((prev) => prev + slidesPerView);
     } else if (movedBy > 50 && currentIndex > 0) {
-      setCurrentIndex((prev) => prev - slidesPerView);
+      setCurrentIndex((prev) =>
+        prev - slidesPerView < 0 ? 0 : prev - slidesPerView
+      );
     } else {
       setCurrentTranslate(prevTranslate); // Reset to previous position if movement is small
     }
