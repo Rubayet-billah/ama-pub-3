@@ -43,7 +43,7 @@ module.exports = {
         accent: "#92b7d8", // or #A2CDF2
         neutral: "#043F8C",
         info: "#0A54FF",
-        success: "#474747",
+        success: "#7f7d7d",
         tertiary: "#389BF2",
         "bg-base": "#FFFFFF",
         "text-base": "#000000",
