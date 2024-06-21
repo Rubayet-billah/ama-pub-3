@@ -11,7 +11,7 @@ const Newses = ({ recentReports }) => {
       <SectionTitle>Trending Reports</SectionTitle>
 
       <CustomContainer classNames="mb-5 lg:mb-12 relative z-1">
-        <section className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6">
+        <section className="grid grid-cols-2 gap-8 md:grid-cols-3">
           {recentReports.map((report) => (
             <NewsCard key={report.id} report={report} />
           ))}

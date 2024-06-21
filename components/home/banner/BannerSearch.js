@@ -80,7 +80,7 @@ const BannerSearch = () => {
     <div className="relative z-20 max-w-4xl py-2 mx-auto mt-10 bg-bg-base">
       <form onSubmit={handleSubmit}>
         <input
-          className="w-full px-4 py-2 pr-12 text-primary placeholder-primary bg-inherit focus:outline-none"
+          className="w-full px-4 py-2 pr-16 text-primary placeholder-primary bg-inherit focus:outline-none"
           type="search"
           placeholder="Search Reports..."
           value={searchValue}
