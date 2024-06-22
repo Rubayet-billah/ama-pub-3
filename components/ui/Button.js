@@ -9,7 +9,7 @@ const Button = ({
 }) => {
   const buttonStyles = {
     primary: "bg-primary text-white",
-    secondary: "bg-secondary text-primary",
+    secondary: "bg-secondary text-white",
     tertiary: "bg-white text-primary",
     success: "bg-green-500 text-white",
     danger: "bg-red-500 text-white",

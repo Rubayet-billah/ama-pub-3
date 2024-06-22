@@ -5,6 +5,8 @@ import NewsCard from "./news/NewsCard";
 import CustomContainer from "../ui/CustomContainer";
 import SinewaveSvg from "../ui/svg/SinewaveSvg";
 import { ArrowLeft, ArrowRight } from "react-feather";
+import Button from "../ui/Button";
+import Link from "next/link";
 
 const Newses = ({ recentReports }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -14,13 +16,6 @@ const Newses = ({ recentReports }) => {
   const [prevTranslate, setPrevTranslate] = useState(0);
   const [slidesPerView, setSlidesPerView] = useState(3);
   const sliderRef = useRef(null);
-
-  console.log({
-    currentIndex,
-    // isDragging,
-    // startPosition,
-    currentTranslate,
-  });
 
   useEffect(() => {
     const handleResize = () => {
@@ -154,6 +149,11 @@ const Newses = ({ recentReports }) => {
           </div>
         </section>
       </CustomContainer>
+      <div className="grid place-items-center">
+        <Link href="/industries">
+          <Button type="secondary">Go to report archive</Button>
+        </Link>
+      </div>
     </div>
   );
 };

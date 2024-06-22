@@ -5,6 +5,7 @@ import BannerSlide from "./banner/BannerSlide";
 import BannerFooter from "./banner/BannerFooter";
 import "./Banner.css";
 import BannerSearch from "./banner/BannerSearch";
+import BannerDesignImage from "./banner/BannerDesignImage";
 
 const Banner = () => {
   return (
@@ -12,7 +13,7 @@ const Banner = () => {
       <BannerSearch />
       <section className="banner-content mt-[5%]">
         <BannerSlide />
-        {/* <BannerFooter /> */}
+        <BannerDesignImage />
       </section>
     </div>
   );
