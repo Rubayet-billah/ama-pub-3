@@ -12,9 +12,7 @@ const ServiceCard = ({ service }) => {
         <Image className="w-10 h-10" src={icon} alt={`${title} icon`} />
       </div>
       <h3 className="mt-4 text-xl font-bold text-center">{title}</h3>
-      <p className="flex-1 mt-2 text-sm text-center text-success">
-        {description}
-      </p>
+      <p className="flex-1 mt-2 text-sm text-success">{description}</p>
       <div className="flex mt-12">
         <Link className="hover:text-primary" href={`/services`}>
           <button className="flex items-center gap-1 text-tertiary hover:text-primary">
