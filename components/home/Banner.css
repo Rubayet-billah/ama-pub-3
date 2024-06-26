@@ -57,7 +57,7 @@
 }
 @media (max-width: 640px) {
   .banner-container {
-    height: 550px;
+    height: 600px;
   }
   .banner-container::before {
     height: 400px;
