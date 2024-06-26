@@ -159,7 +159,7 @@ const AboutPage = ({ sponsors, testimonials }) => {
             </ul>
           </div>
           <div className="grid mt-5 place-items-center lg:mt-10">
-            <Button>View All Our Publishers</Button>
+            <Button type="tertiary">View All Our Publishers</Button>
           </div>
         </CustomContainer>
         <hr className="w-1/2 mx-auto" />
@@ -187,7 +187,7 @@ const AboutPage = ({ sponsors, testimonials }) => {
             </p>
           </div>
           <div className="grid mt-5 place-items-center lg:mt-10">
-            <Button>See our job offers</Button>
+            <Button type="tertiary">See our job offers</Button>
           </div>
         </CustomContainer>
         <hr className="w-1/2 mx-auto" />

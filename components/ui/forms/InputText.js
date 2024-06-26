@@ -12,7 +12,7 @@ const InputText = ({
 }) => {
   return (
     <input
-      className={`w-full px-4 py-3 bg-accent focus:outline-none placeholder-neutral text-sm ${classNames}`}
+      className={`w-full px-4 py-3 bg-white focus:outline-none placeholder-neutral text-sm ${classNames}`}
       type={type}
       name={name}
       placeholder={placeholder}

@@ -142,7 +142,7 @@ const ContactForm = ({
           <select
             name="country"
             onChange={handleInputChange}
-            className="w-full px-4 py-3 text-sm bg-accent focus:outline-none"
+            className="w-full px-4 py-3 text-sm bg-white focus:outline-none"
           >
             <option value={""}>Select Country</option>
             {countryList.map((country) => (
@@ -179,7 +179,7 @@ const ContactForm = ({
             value={formData.message}
             onChange={handleInputChange}
             className={
-              "md:col-span-2 textarea rounded-sm textarea-sm placeholder-neutral bg-accent"
+              "md:col-span-2 textarea rounded-sm textarea-sm placeholder-neutral bg-white"
             }
           ></textarea>
         </div>
@@ -236,12 +236,14 @@ const ContactForm = ({
           </button>
         </div>
         {error && <div className="font-semibold text-error"> {error} </div>}
-        <button
-          type="submit"
-          className="px-4 py-2 mt-5 text-sm text-white rounded bg-primary"
-        >
-          {submitted ? "Submitting.." : btnText}
-        </button>
+        <div className="grid place-items-center">
+          <button
+            type="submit"
+            className="px-8 py-2 mt-5 text-sm text-white rounded-full bg-primary"
+          >
+            {submitted ? "Submitting.." : btnText}
+          </button>
+        </div>
       </form>
       <p className="my-5 text-sm">
         We do not share your information with anyone. However, we may send you
