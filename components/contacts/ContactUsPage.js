@@ -19,6 +19,23 @@ const ContactUsPage = () => {
             <div className="mb-8 lg:mb-12">
               <BannerSearch />
             </div>
+            <div className="mb-10 space-y-3 text-center text-white">
+              <div>
+                <h1 className="text-lg uppercase lg:text-xl">
+                  customer support
+                </h1>
+                <hr className="w-24 mx-auto mt-2 border-2 border-accent" />
+              </div>
+              <div>
+                <h1 className="mb-3 mrf-sub-heading">
+                  We will be happy to help you!
+                </h1>
+                <p>
+                  We’re here to help answer any questions about our products and
+                  services.
+                </p>
+              </div>
+            </div>
             <div className="max-w-3xl mx-auto">
               <ContactQueryForm />
             </div>
