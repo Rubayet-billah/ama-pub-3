@@ -15,7 +15,7 @@ const EmailNotificationBanner = () => {
             </h2>
           </div>
           <div>
-            <Button type="tertiary" classNames="rounded-full">
+            <Button type="light" classNames="rounded-full">
               <span> Sign me up</span>
               <span>
                 <ArrowRight />

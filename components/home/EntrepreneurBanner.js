@@ -16,7 +16,7 @@ const EntrepreneurBanner = () => {
           </h1>
 
           <div>
-            <Button classNames="rounded-full" type="tertiary">
+            <Button classNames="rounded-full" type="light">
               Download Sample <ArrowRight />
             </Button>
           </div>
