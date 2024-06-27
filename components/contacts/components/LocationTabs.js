@@ -239,7 +239,7 @@ const ContactQueryForm = () => {
   ];
 
   return (
-    <div className="w-full overflow-hidden rounded shadow-lg bg-accent">
+    <div className="w-full overflow-hidden rounded shadow-lg bg-contact-form">
       <div className="flex mb-4">
         {tabsElement.map((tab) => (
           <button

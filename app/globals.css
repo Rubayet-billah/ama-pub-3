@@ -12,6 +12,8 @@
   --color-tertiary: #389bf2;
   --color-bg-base: #ffffff;
   --color-text-base: #000000;
+
+  --color-contact-form: #e0ebf4;
 }
 
 @layer components {

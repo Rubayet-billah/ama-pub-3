@@ -47,6 +47,7 @@ module.exports = {
         tertiary: "#389BF2",
         "bg-base": "#FFFFFF",
         "text-base": "#000000",
+        "contact-form": "#E0EBF4",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
