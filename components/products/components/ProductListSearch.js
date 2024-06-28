@@ -80,10 +80,10 @@ const ProductListSearch = ({ currentCategory }) => {
   }, [debouncedSearchValue, categoryId]);
 
   return (
-    <div className="relative py-2 bg-secondary">
+    <div className="relative z-10 py-2 mx-auto border shadow-lg bg-contact-form">
       <form onSubmit={handleSubmit}>
         <input
-          className="w-full px-4 py-2 pr-12 text-primary placeholder-primary bg-inherit focus:outline-none"
+          className="w-full px-4 py-2 pr-16 text-primary placeholder-primary bg-inherit focus:outline-none"
           type="search"
           placeholder="Search Reports..."
           value={searchValue}
@@ -93,19 +93,19 @@ const ProductListSearch = ({ currentCategory }) => {
         />
         <button
           type="submit"
-          className="absolute top-0 right-0 h-full px-1 text-primary"
+          className="absolute top-0 right-0 h-full px-4 text-white bg-secondary"
           aria-label="Search"
         >
           <Search />
         </button>
       </form>
       {isInputFocused && isTyping && (
-        <div className="absolute left-0 z-10 p-4 space-y-2 text-sm text-black bg-white rounded shadow-md w-96 top-full">
+        <div className="absolute left-0 py-4 text-sm text-black bg-white rounded shadow-md z-[2] w-96 top-full">
           {suggestions?.map((sg, index) => (
             <Link
               key={index}
               href={`/reports/${sg?.slug}`}
-              className="block mb-1 hover:text-info"
+              className="block px-4 py-1 mb-1 hover:text-info hover:bg-contact-form"
               onClick={() => {
                 setSearchValue("");
                 setIsTyping(false);

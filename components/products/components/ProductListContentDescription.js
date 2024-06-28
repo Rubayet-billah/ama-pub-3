@@ -14,7 +14,7 @@ const ProductListContentDescription = ({ isAllReports, currentCategory }) => {
             : currentCategory?.summary}
         </p>
       </div>
-      <MRFImage
+      {/* <MRFImage
         src={
           isAllReports
             ? allCategoryThumbnail
@@ -41,7 +41,7 @@ const ProductListContentDescription = ({ isAllReports, currentCategory }) => {
             Speak to an Expert
           </Link>
         </div>
-      </MRFImage>
+      </MRFImage> */}
     </>
   );
 };

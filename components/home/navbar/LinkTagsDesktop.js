@@ -35,7 +35,7 @@ const LinkTagsDesktop = ({ parentCategories }) => {
                 backgroundColor: "transparent",
               }}
             >
-              <ul className="top-0 z-10 grid grid-cols-2 gap-2 p-4 bg-white rounded shadow w-[576px]">
+              <ul className="top-0 z-30 grid grid-cols-2 gap-2 p-4 bg-white rounded shadow w-[576px]">
                 {parentCategories?.map((submenu) => (
                   <li key={submenu.id} className="py-1">
                     <Link

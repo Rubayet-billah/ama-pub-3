@@ -13,7 +13,7 @@ const ProductsList = ({
   const totalReports = reportsData.totalCount;
   return (
     <div className="mx-auto mt-5 space-y-5">
-      <ProductListContentDescription
+      {/* <ProductListContentDescription
         isAllReports={isAllReports}
         currentCategory={currentCategory}
       />
@@ -21,12 +21,12 @@ const ProductsList = ({
       <ProductListSearch
         isAllReports={isAllReports}
         currentCategory={currentCategory}
-      />
+      /> */}
       <div>
         {reportsData?.data?.map((report, idx) => (
           <ReportCard report={report} key={idx} />
         ))}
-      {!reportsData?.data?.totalCount && isAllReports ? (
+        {!reportsData?.data?.totalCount && isAllReports ? (
           <section>
             <Pagination
               category={reportsData?.category}

@@ -97,12 +97,12 @@ const BannerSearch = () => {
         </button>
       </form>
       {isInputFocused && isTyping && (
-        <div className="absolute left-0 p-4 space-y-2 text-sm text-black bg-white rounded shadow-md w-96 top-full">
+        <div className="absolute left-0 z-20 py-4 text-sm text-black bg-white rounded shadow-md w-96 top-full">
           {suggestions?.map((sg, index) => (
             <Link
               key={index}
               href={`/reports/${sg?.slug}`}
-              className="block mb-1 hover:text-info"
+              className="block px-4 py-1 mb-1 hover:text-info hover:bg-contact-form"
               onClick={() => {
                 setSearchValue("");
                 setIsTyping(false);
