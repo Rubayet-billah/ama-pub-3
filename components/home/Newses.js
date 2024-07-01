@@ -106,49 +106,51 @@ const Newses = ({ recentReports }) => {
     <div className="relative">
       <SinewaveSvg flip />
       <SectionTitle>Trending Reports</SectionTitle>
-      <CustomContainer classNames="mb-5 lg:mb-12">
-        <section
-          className="relative flex w-full mb-5 overflow-hidden lg:mb-12 z-1"
-          ref={sliderRef}
-          onMouseDown={touchStart(currentIndex)}
-          onMouseMove={touchMove}
-          onMouseUp={touchEnd}
-          onMouseLeave={() => isDragging && touchEnd()}
-          onTouchStart={touchStart(currentIndex)}
-          onTouchMove={touchMove}
-          onTouchEnd={touchEnd}
-        >
-          {recentReports.map((report, index) => (
-            <div
-              key={report.id}
-              className="flex-shrink-0 p-2"
-              style={{
-                transform: `translateX(${currentTranslate}%)`,
-                transition: isDragging ? "none" : "transform 1s ease-out",
-                width: `${100 / slidesPerView}%`,
-              }}
-            >
-              <div className="h-full p-2">
-                <NewsCard report={report} />
+      <main className="relative">
+        <CustomContainer classNames="mb-5 lg:mb-12">
+          <section
+            className="relative z-10 flex w-full mb-5 overflow-hidden lg:mb-12"
+            ref={sliderRef}
+            onMouseDown={touchStart(currentIndex)}
+            onMouseMove={touchMove}
+            onMouseUp={touchEnd}
+            onMouseLeave={() => isDragging && touchEnd()}
+            onTouchStart={touchStart(currentIndex)}
+            onTouchMove={touchMove}
+            onTouchEnd={touchEnd}
+          >
+            {recentReports.map((report, index) => (
+              <div
+                key={report.id}
+                className="flex-shrink-0 p-2"
+                style={{
+                  transform: `translateX(${currentTranslate}%)`,
+                  transition: isDragging ? "none" : "transform 1s ease-out",
+                  width: `${100 / slidesPerView}%`,
+                }}
+              >
+                <div className="h-full p-2">
+                  <NewsCard report={report} />
+                </div>
               </div>
-            </div>
-          ))}
-          <div className="absolute flex items-center justify-between w-full h-full px-5 xl:px-10">
-            <button
-              className="p-2 text-white bg-opacity-50 rounded-full bg-primary hover:bg-opacity-75"
-              onClick={goToPrevious}
-            >
-              <ArrowLeft />
-            </button>
-            <button
-              className="p-2 text-white bg-opacity-50 rounded-full bg-primary hover:bg-opacity-75"
-              onClick={goToNext}
-            >
-              <ArrowRight />
-            </button>
-          </div>
-        </section>
-      </CustomContainer>
+            ))}
+          </section>
+        </CustomContainer>
+        <div className="absolute top-0 flex items-center justify-between w-full h-full px-5 xl:px-10">
+          <button
+            className="relative z-10 p-2 text-white bg-opacity-50 rounded-full bg-primary hover:bg-opacity-75"
+            onClick={goToPrevious}
+          >
+            <ArrowLeft />
+          </button>
+          <button
+            className="relative z-10 p-2 text-white bg-opacity-50 rounded-full bg-primary hover:bg-opacity-75"
+            onClick={goToNext}
+          >
+            <ArrowRight />
+          </button>
+        </div>
+      </main>
       <div className="grid place-items-center">
         <Link href="/industries">
           <Button type="secondary">Go to report archive</Button>
